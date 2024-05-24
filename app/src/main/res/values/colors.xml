@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="main_text">#846340</color>
+    <color name="secondary_text">#AF9479</color>
+
+    <color name="kinda_brown">#342D1A</color>
+    <color name="kinda_rose">#F6E5D1</color>
+    <color name="kinda_white">#FAF9F9</color>
+    <color name="kinda_gray">#E5E5E5</color>
+
 </resources>

@@ -1,17 +1,16 @@
-package com.atom.andreytomilovtestandroidvacc2024.ui.dashboard
+package com.atom.andreytomilovtestandroidvacc2024.ui.menu
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.atom.andreytomilovtestandroidvacc2024.databinding.FragmentDashboardBinding
+import com.atom.andreytomilovtestandroidvacc2024.databinding.FragmentMenuBinding
 
 class MenuFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentMenuBinding? = null
 
     private val binding get() = _binding!!
 
@@ -23,13 +22,9 @@ class MenuFragment : Fragment() {
         val dashboardViewModel =
             ViewModelProvider(this).get(MenuViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentMenuBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

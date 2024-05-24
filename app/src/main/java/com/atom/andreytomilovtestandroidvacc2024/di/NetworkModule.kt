@@ -13,7 +13,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 class NetworkModule {
 
     companion object {
-        private const val BASE_URL = "http://147.78.66.203:3210/"
+
+        /**
+          https://run.mocky.io/v3/462fb1fc-b4ad-44b1-ba51-3e54fde3154d
+         */
+        private const val BASE_URL = "https://run.mocky.io/v3/"
     }
 
     @Provides

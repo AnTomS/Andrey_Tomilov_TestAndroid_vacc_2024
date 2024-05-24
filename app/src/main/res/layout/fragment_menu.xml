@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.menu.MenuFragment">
+
+   <com.google.android.material.appbar.MaterialToolbar
+       android:id="@+id/toolbar"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:background="@color/teal_200"
+       android:elevation="4dp"
+       app:title="Меню"
+       android:gravity="center_vertical"
+       app:titleTextColor="@color/white"
+       />
+
+   <androidx.recyclerview.widget.RecyclerView
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/toolbar"
+       android:id="@+id/recyclerView"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       tools:listitem="@layout/item_for_menu"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

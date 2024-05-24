@@ -1,4 +1,4 @@
-package com.atom.andreytomilovtestandroidvacc2024.ui.home
+package com.atom.andreytomilovtestandroidvacc2024.ui.coffeedetail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
