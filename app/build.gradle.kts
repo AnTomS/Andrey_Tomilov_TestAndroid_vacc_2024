@@ -42,6 +42,8 @@ dependencies {
 
     implementation(libs.dagger)
     implementation(libs.dagger.compiler)
+    implementation(libs.dagger.android.support)
+    implementation(libs.dagger.android.processor)
     implementation(libs.glide)
     implementation(libs.gson)
     implementation(libs.converter.gson)

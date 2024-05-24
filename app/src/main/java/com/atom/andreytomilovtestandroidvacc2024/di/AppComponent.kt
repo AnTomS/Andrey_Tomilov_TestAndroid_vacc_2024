@@ -1,6 +1,7 @@
 package com.atom.andreytomilovtestandroidvacc2024.di
 
 import android.util.Log
+import com.atom.andreytomilovtestandroidvacc2024.MainActivity
 import com.atom.andreytomilovtestandroidvacc2024.ui.menu.MenuFragment
 import com.atom.andreytomilovtestandroidvacc2024.ui.coffeedetail.CoffeeDetailFragment
 import dagger.Component
@@ -17,6 +18,10 @@ interface AppComponent {
 
     fun inject(fragment: CoffeeDetailFragment) {
         Log.d("AppComponent", "CoffeeDetailFragment")
+    }
+
+    fun inject(activity: MainActivity) {
+        Log.d("AppComponent", "Injecting MainActivity")
     }
 
 }

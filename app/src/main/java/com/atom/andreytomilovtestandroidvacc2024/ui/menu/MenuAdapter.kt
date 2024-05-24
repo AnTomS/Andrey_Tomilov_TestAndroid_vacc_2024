@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.atom.andreytomilovtestandroidvacc2024.R
 import com.atom.andreytomilovtestandroidvacc2024.domain.dto.Coffee
 
-class MenuAdapter(private val onItemClicked: (Coffee) -> Unit) :
+class MenuAdapter(private val onItemClicked:(Coffee) -> Unit) :
     RecyclerView.Adapter<MenuAdapter.CoffeeViewHolder>() {
 
     private var items: List<Coffee> = listOf()

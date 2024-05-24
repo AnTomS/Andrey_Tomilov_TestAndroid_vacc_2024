@@ -6,12 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.atom.andreytomilovtestandroidvacc2024.databinding.FragmentCoffeDetailBinding
+import androidx.navigation.fragment.navArgs
+import com.atom.andreytomilovtestandroidvacc2024.databinding.FragmentCoffeeDetailBinding
 
 class CoffeeDetailFragment : Fragment() {
 
-    private var _binding: FragmentCoffeDetailBinding? = null
+    private var _binding: FragmentCoffeeDetailBinding? = null
     private val binding get() = _binding!!
+
+ //   private val args: CoffeeDetailFragmentArgs by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,7 +25,7 @@ class CoffeeDetailFragment : Fragment() {
         val coffeeDetailViewModel =
             ViewModelProvider(this).get(CoffeeDetailViewModel::class.java)
 
-        _binding = FragmentCoffeDetailBinding.inflate(inflater, container, false)
+        _binding = FragmentCoffeeDetailBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         return root

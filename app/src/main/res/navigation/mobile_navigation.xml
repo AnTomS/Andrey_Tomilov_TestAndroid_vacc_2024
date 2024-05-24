@@ -9,12 +9,19 @@
         android:id="@+id/coffee_detail_fragment"
         android:name="com.atom.andreytomilovtestandroidvacc2024.ui.coffeedetail.CoffeeDetailFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_coffee_detail" />
-
+        tools:layout="@layout/fragment_coffee_detail">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/menu_fragment"
         android:name="com.atom.andreytomilovtestandroidvacc2024.ui.menu.MenuFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menu_fragment_to_coffee_detail_fragment"
+            app:destination="@id/coffee_detail_fragment" />
+    </fragment>
 
 </navigation>

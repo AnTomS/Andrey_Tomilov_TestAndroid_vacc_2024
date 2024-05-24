@@ -13,7 +13,6 @@ import javax.inject.Singleton
 class DataModule(private val application: Application) {
     @Singleton
     @Provides
-
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
