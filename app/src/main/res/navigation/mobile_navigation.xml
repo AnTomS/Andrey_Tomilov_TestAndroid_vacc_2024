@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/menu_fragment">
+
+    <fragment
+        android:id="@+id/coffee_detail_fragment"
+        android:name="com.atom.andreytomilovtestandroidvacc2024.ui.home.CoffeeDetailFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/menu_fragment"
+        android:name="com.atom.andreytomilovtestandroidvacc2024.ui.dashboard.MenuFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+</navigation>
