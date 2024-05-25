@@ -10,7 +10,6 @@ import javax.inject.Singleton
 
 @Module
 class DomainModule {
-
     @Singleton
     @Provides
     fun provideRegisterUseCase(repository: RepositoryImpl): GetAllCoffeeListUseCase {

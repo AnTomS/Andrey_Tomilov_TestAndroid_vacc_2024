@@ -1,7 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.org.jetbrains.kotlin.kapt)
+    alias(libs.plugins.kapt)
+
 }
 
 android {
@@ -42,9 +43,10 @@ android {
 dependencies {
 
     implementation(libs.dagger)
-    implementation(libs.dagger.compiler)
     implementation(libs.dagger.android.support)
     implementation(libs.dagger.android.processor)
+
+    kapt(libs.dagger.compiler)
     implementation(libs.glide)
     implementation(libs.gson)
     implementation(libs.converter.gson)

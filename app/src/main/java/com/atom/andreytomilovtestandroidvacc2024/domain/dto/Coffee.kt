@@ -7,7 +7,7 @@ data class Coffee(
     val name: String,
     val description: String,
     val image: String,
-    val price: Double,
+    val price: String,
     @SerializedName("cup_volume")
-    val cupVolume: Int
+    val cupVolume: String
 )

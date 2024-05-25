@@ -12,7 +12,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 class NetworkModule {
     companion object {
-
         /**
           https://run.mocky.io/v3/462fb1fc-b4ad-44b1-ba51-3e54fde3154d
          */

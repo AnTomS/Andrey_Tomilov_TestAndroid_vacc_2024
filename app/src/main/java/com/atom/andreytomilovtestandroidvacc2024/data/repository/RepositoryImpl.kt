@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(private val apiService: ApiService) : Repository {
     override suspend fun getCoffees(): List<Coffee> =
-        apiService.getCoffeeList()
+        apiService.getCoffeeList().coffee
 
 
     override suspend fun getCoffeeDetail(id: Int): Coffee {

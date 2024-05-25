@@ -12,19 +12,21 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.atom.andreytomilovtestandroidvacc2024.databinding.ActivityMainBinding
 import com.atom.andreytomilovtestandroidvacc2024.di.AppComponent
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appComponent: AppComponent
     private lateinit var binding: ActivityMainBinding
+
+    @Inject
+    lateinit var appComponent: AppComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        appComponent = (application as App).appComponent
-        appComponent.inject(this)
+        (application as App).appComponent.inject(this)
         Log.d("AppComponent", "Injecting MainActivity")
         setupNavigation()
     }
@@ -35,5 +37,10 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
         val navController = navHostFragment.navController
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }
