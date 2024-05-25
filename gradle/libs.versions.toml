@@ -18,6 +18,7 @@ retrofit = "2.9.0"
 gson = "2.10.1"
 logging-interceptor = "4.10.0"
 glide = "4.15.1"
+org-jetbrains-kotlin-android = "1.8.0"
 
 
 
@@ -53,4 +54,5 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+org-jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "org-jetbrains-kotlin-android" }
 
