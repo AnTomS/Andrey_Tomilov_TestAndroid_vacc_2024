@@ -55,4 +55,6 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 org-jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "org-jetbrains-kotlin-android" }
+dagger-hilt-android = { id = "com.google.dagger.hilt.android" , version.ref = "dagger" }
+
 
