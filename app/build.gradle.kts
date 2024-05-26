@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.kapt)
-
+    alias(libs.plugins.androidx.navigation.safeargs)
 }
 
 android {

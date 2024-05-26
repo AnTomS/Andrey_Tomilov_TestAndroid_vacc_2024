@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.atom.andreytomilovtestandroidvacc2024.App
 import com.atom.andreytomilovtestandroidvacc2024.data.network.ResultState
@@ -45,7 +46,13 @@ class MenuFragment : Fragment() {
 
         menuAdapter = MenuAdapter { coffee ->
             Log.d("MenuFragment", "Coffee item clicked: ${coffee.id}")
-            // findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToDetailFragment(coffee.id))
+            val id = coffee.id ?: 0
+            findNavController().navigate(
+                MenuFragmentDirections.actionMenuFragmentToCoffeeDetailFragment(
+                    id
+                )
+            )
+
         }
 
         binding.recyclerView.apply {
@@ -57,9 +64,12 @@ class MenuFragment : Fragment() {
             Log.d("MenuFragment", "Coffees data observed: $result")
             when (result) {
                 is ResultState.Success -> {
+                    binding.btnForRetry.visibility = View.GONE
+                    binding.progressBar.visibility = View.GONE
                     menuAdapter.setItems(result.data as List<Coffee>)
                     Log.d("MenuFragment", "Coffees loaded: ${result.data.size}")
                 }
+
                 is ResultState.Failure -> showError(result.exception)
                 is ResultState.Loading -> showLoading()
             }
@@ -73,16 +83,22 @@ class MenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("MenuFragment", "onViewCreated")
+        showLoading()
     }
 
     private fun showError(exception: Throwable) {
         Log.e("MenuFragment", "Error loading coffees", exception)
-
+        binding.btnForRetry.visibility = View.VISIBLE
+        binding.btnForRetry.setOnClickListener {
+            menuViewModel.fetchCoffees()
+        }
     }
 
     private fun showLoading() {
-        Log.d("MenuFragment", "Loading coffees")
-
+        Log.d("MenuFragment", "Showing loading indicator")
+        binding.progressBar.post {
+            binding.progressBar.visibility = View.VISIBLE
+        }
     }
 
     override fun onDestroyView() {

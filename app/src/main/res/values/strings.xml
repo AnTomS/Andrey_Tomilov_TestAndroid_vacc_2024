@@ -7,4 +7,9 @@
 
     <string name="price_coffe">стоимость порции</string>
     <string name="name_coffee">название напитка</string>
+    <string name="retry">Обновить</string>
+    <string name="price">Цена</string>
+    <string name="cup">Объем чаши</string>
+    <string name="discription">Описание</string>
+    <string name="name">Название напитка</string>
 </resources>

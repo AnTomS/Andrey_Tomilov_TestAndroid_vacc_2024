@@ -1,14 +1,13 @@
 package com.atom.andreytomilovtestandroidvacc2024.ui.menu
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.atom.andreytomilovtestandroidvacc2024.R
+import com.atom.andreytomilovtestandroidvacc2024.databinding.ItemForMenuBinding
 import com.atom.andreytomilovtestandroidvacc2024.domain.dto.Coffee
+import com.bumptech.glide.Glide
 
-class MenuAdapter(private val onItemClicked:(Coffee) -> Unit) :
+class MenuAdapter(private val onItemClicked: (Coffee) -> Unit) :
     RecyclerView.Adapter<MenuAdapter.CoffeeViewHolder>() {
 
     private var items: List<Coffee> = listOf()
@@ -19,9 +18,10 @@ class MenuAdapter(private val onItemClicked:(Coffee) -> Unit) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoffeeViewHolder {
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_for_menu, parent, false)
-        return CoffeeViewHolder(view)
+
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = ItemForMenuBinding.inflate(inflater, parent, false)
+        return CoffeeViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: CoffeeViewHolder, position: Int) {
@@ -30,12 +30,17 @@ class MenuAdapter(private val onItemClicked:(Coffee) -> Unit) :
 
     override fun getItemCount(): Int = items.size
 
-    inner class CoffeeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class CoffeeViewHolder(private val binding: ItemForMenuBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Coffee) {
-            itemView.findViewById<TextView>(R.id.coffee_name).text = item.name
-            itemView.findViewById<TextView>(R.id.coffee_price).text = item.price.toString()
-            // Set image using your preferred image loading library, e.g., Glide
-            itemView.setOnClickListener { onItemClicked(item) }
+            binding.apply {
+                coffeeName.text = item.name
+                coffeePrice.text = item.price.toString()
+                Glide.with(binding.root)
+                    .load(item.image)
+                    .into(binding.coffeeImage)
+                itemView.setOnClickListener { onItemClicked(item) }
+            }
         }
     }
 }

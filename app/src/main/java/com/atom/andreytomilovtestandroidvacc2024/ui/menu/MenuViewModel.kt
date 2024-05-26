@@ -22,6 +22,7 @@ class MenuViewModel @Inject constructor(
         viewModelScope.launch {
             Log.d("MenuViewModel", "Fetching coffees")
             _coffees.value = ResultState.Loading
+
             try {
                 val coffeeList = getAllCoffeeListUseCase()
                 _coffees.value = ResultState.Success(coffeeList)

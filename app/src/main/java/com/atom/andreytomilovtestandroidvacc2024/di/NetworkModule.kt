@@ -1,7 +1,5 @@
 package com.atom.andreytomilovtestandroidvacc2024.di
 
-import android.content.SharedPreferences
-import android.util.Log
 import dagger.Module
 import dagger.Provides
 import okhttp3.Interceptor
@@ -13,7 +11,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 class NetworkModule {
     companion object {
         /**
-          https://run.mocky.io/v3/462fb1fc-b4ad-44b1-ba51-3e54fde3154d
+        https://run.mocky.io/v3/462fb1fc-b4ad-44b1-ba51-3e54fde3154d
+
+        https://run.mocky.io/v3/fa3421a6-2eb8-4a4f-8589-388d464ea740
          */
         private const val BASE_URL = "https://run.mocky.io/v3/"
     }

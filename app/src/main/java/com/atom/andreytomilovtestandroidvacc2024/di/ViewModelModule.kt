@@ -24,7 +24,7 @@ class ViewModelModule {
     @Singleton
     @Provides
     fun provideCoffeeDetailViewModelFactory(
-        getCoffeeDetailUseCase: GetCoffeeDetailUseCase
+        getCoffeeDetailUseCase: GetCoffeeDetailUseCase,
     ): ViewModelProvider.Factory {
         return ViewModelFactory { CoffeeDetailViewModel(getCoffeeDetailUseCase) }
     }

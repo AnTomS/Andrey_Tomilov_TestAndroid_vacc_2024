@@ -11,7 +11,6 @@ import com.atom.andreytomilovtestandroidvacc2024.di.NetworkModule
 import com.atom.andreytomilovtestandroidvacc2024.di.ViewModelModule
 
 
-
 class App : Application() {
 
     lateinit var appComponent: AppComponent

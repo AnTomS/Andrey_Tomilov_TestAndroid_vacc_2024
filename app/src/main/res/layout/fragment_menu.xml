@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,23 +7,49 @@
 
    <com.google.android.material.appbar.MaterialToolbar
        android:id="@+id/toolbar"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
        android:layout_width="match_parent"
-       android:layout_height="0dp"
+       android:layout_height="wrap_content"
        android:background="@color/teal_200"
        android:elevation="4dp"
+       android:backgroundTint="@color/teal_200"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
        app:title="Меню"
-       android:gravity="center_vertical"
-       app:titleTextColor="@color/white"
-       />
+       app:titleTextColor="@color/white" />
 
    <androidx.recyclerview.widget.RecyclerView
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/toolbar"
+       android:background="@color/kinda_rose"
        android:id="@+id/recyclerView"
        android:layout_width="match_parent"
        android:layout_height="0dp"
-       tools:listitem="@layout/item_for_menu"/>
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/toolbar"
+       app:layout_constraintBottom_toBottomOf="parent"
+       tools:listitem="@layout/item_for_menu" />
+
+   <com.google.android.material.button.MaterialButton
+       android:visibility="invisible"
+       android:id="@+id/btn_for_retry"
+       android:backgroundTint="@color/main_text"
+       android:text="@string/retry"
+       android:textAllCaps="false"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintBottom_toTopOf="@+id/progressBar"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content" />
+
+
+   <ProgressBar
+       android:id="@+id/progressBar"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:visibility="visible"
+       android:elevation="10dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
